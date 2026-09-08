@@ -8,7 +8,7 @@
 
 ## 🚀 Live Website
 
-🌐 **Team Spidey Website:**
+🌐 **My Profile Website:**
 
 https://krvaibhav78.github.io/
 
