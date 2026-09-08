@@ -1,0 +1,946 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kumar Vaibhav | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            z-index: 1000;
+
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 120px 8% 60px;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+        }
+
+        /* PROFILE IMAGE */
+
+        .profile-image {
+            width: 170px;
+            height: 170px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 4px solid #38bdf8;
+
+            margin-bottom: 25px;
+
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.25);
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            color: white;
+
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 23px;
+            font-weight: normal;
+
+            color: #94a3b8;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+
+            color: #cbd5e1;
+
+            max-width: 760px;
+
+            margin: auto;
+        }
+
+
+        /* ================= BUTTONS ================= */
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 27px;
+
+            margin: 8px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .primary:hover {
+            background: #0ea5e9;
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .secondary:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 90px 8%;
+
+            max-width: 1150px;
+
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+
+            font-size: 36px;
+
+            color: white;
+
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #38bdf8;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .about p {
+            color: #cbd5e1;
+
+            font-size: 17px;
+        }
+
+
+        /* ================= EDUCATION ================= */
+
+        .education-card {
+            background: #1e293b;
+
+            padding: 28px;
+
+            border-radius: 12px;
+
+            margin-bottom: 20px;
+
+            border-left: 4px solid #38bdf8;
+
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-card h3 {
+            color: white;
+
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #94a3b8;
+        }
+
+
+        /* ================= SKILLS ================= */
+
+        .skills-container {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 15px;
+        }
+
+        .skill {
+            background: #1e293b;
+
+            padding: 12px 21px;
+
+            border-radius: 25px;
+
+            border: 1px solid #334155;
+
+            color: #cbd5e1;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            border-color: #38bdf8;
+
+            color: #38bdf8;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #1e293b;
+
+            padding: 27px;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+        }
+
+        .project-link {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            color: #38bdf8;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= ACHIEVEMENTS ================= */
+
+        .achievement {
+            background: #1e293b;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            margin-bottom: 15px;
+        }
+
+        .achievement strong {
+            color: #38bdf8;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #94a3b8;
+
+            margin: 8px;
+        }
+
+        .contact a {
+            color: #38bdf8;
+
+            text-decoration: none;
+        }
+
+        .social-links {
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: inline-block;
+
+            margin: 8px 15px;
+
+            color: #38bdf8;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            padding: 10px 18px;
+
+            border: 1px solid #334155;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #38bdf8;
+
+            color: #0f172a;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            border-top: 1px solid #1e293b;
+
+            color: #64748b;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <div class="logo">
+        KV.
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <!--
+        IMPORTANT:
+        Keep your profile picture in the same folder
+        as index.html and name it profile.jpg
+        -->
+
+        <img
+            src="profile.jpg"
+            alt="Kumar Vaibhav"
+            class="profile-image"
+        >
+
+
+        <h1>
+            Hi, I'm
+            <span>Kumar Vaibhav</span>
+        </h1>
+
+
+        <h2>
+            MTech Student at IIT Delhi
+            <br>
+            Industrial Engineering & Operations Research
+        </h2>
+
+
+        <p>
+
+            I am an engineering graduate currently pursuing
+            an MTech in Industrial Engineering and Operations
+            Research at IIT Delhi.
+
+            My interests include optimization, operations
+            research, machine learning, data analytics,
+            and solving real-world engineering problems
+            using computational and data-driven approaches.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#projects"
+                class="btn primary"
+            >
+                View My Projects
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn secondary"
+            >
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        About <span>Me</span>
+    </h2>
+
+
+    <div class="about">
+
+        <p>
+
+            I completed my Bachelor of Technology in
+            Agricultural Engineering from the Indian
+            Agricultural Research Institute (IARI),
+            New Delhi, with a CGPA of 8.19.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            I am currently pursuing my MTech in Industrial
+            Engineering and Operations Research at
+            the Indian Institute of Technology Delhi.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            I am interested in optimization, operations
+            research, machine learning, supply chain
+            management, data analysis and technology-driven
+            problem solving.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+    <h2 class="section-title">
+        My <span>Education</span>
+    </h2>
+
+
+    <div class="education-card">
+
+        <h3>
+            Master of Technology (MTech)
+        </h3>
+
+        <p>
+            Industrial Engineering and Operations Research
+        </p>
+
+        <p>
+            Indian Institute of Technology Delhi (IIT Delhi)
+        </p>
+
+        <p>
+            Currently Pursuing
+        </p>
+
+    </div>
+
+
+
+    <div class="education-card">
+
+        <h3>
+            Bachelor of Technology (BTech)
+        </h3>
+
+        <p>
+            Agricultural Engineering
+        </p>
+
+        <p>
+            Indian Agricultural Research Institute (IARI),
+            New Delhi
+        </p>
+
+        <p>
+            2022 – 2026
+        </p>
+
+        <p>
+            CGPA: <strong>8.19 / 10</strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <h2 class="section-title">
+        My <span>Skills</span>
+    </h2>
+
+
+    <div class="skills-container">
+
+        <div class="skill">
+            Operations Research
+        </div>
+
+        <div class="skill">
+            Optimization
+        </div>
+
+        <div class="skill">
+            Machine Learning
+        </div>
+
+        <div class="skill">
+            Python
+        </div>
+
+        <div class="skill">
+            MATLAB
+        </div>
+
+        <div class="skill">
+            Data Analysis
+        </div>
+
+        <div class="skill">
+            Supply Chain Management
+        </div>
+
+        <div class="skill">
+            Git & GitHub
+        </div>
+
+        <div class="skill">
+            HTML & CSS
+        </div>
+
+        <div class="skill">
+            LaTeX
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <h2 class="section-title">
+        My <span>Projects</span>
+    </h2>
+
+
+    <div class="projects">
+
+
+        <div class="project-card">
+
+            <h3>
+                Dynamic EOQ Model
+            </h3>
+
+            <p>
+
+                A data-driven Dynamic Economic Order Quantity
+                model for aluminium procurement using market
+                price data, MATLAB and optimization techniques.
+
+            </p>
+
+            <a
+                href="#"
+                class="project-link"
+            >
+                View Project →
+            </a>
+
+        </div>
+
+
+
+        <div class="project-card">
+
+            <h3>
+                Machine Learning Projects
+            </h3>
+
+            <p>
+
+                Projects involving data preprocessing,
+                regression, model evaluation, feature scaling
+                and predictive modelling using Python and
+                machine learning libraries.
+
+            </p>
+
+            <a
+                href="#"
+                class="project-link"
+            >
+                View Project →
+            </a>
+
+        </div>
+
+
+
+        <div class="project-card">
+
+            <h3>
+                Team Spidey
+            </h3>
+
+            <p>
+
+                A team profile and portfolio website designed
+                to showcase team members, projects, skills
+                and achievements.
+
+            </p>
+
+            <a
+                href="https://github.com/krvaibhav78/Team-Spidey"
+                target="_blank"
+                class="project-link"
+            >
+                View on GitHub →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section id="achievements">
+
+    <h2 class="section-title">
+        <span>Achievements</span>
+    </h2>
+
+
+    <div class="achievement">
+
+        <strong>
+            Academic Achievement:
+        </strong>
+
+        BTech in Agricultural Engineering with
+        a CGPA of 8.19 / 10.
+
+    </div>
+
+
+    <div class="achievement">
+
+        <strong>
+            GATE Agricultural Engineering:
+        </strong>
+
+        Qualified GATE in Agricultural Engineering.
+
+    </div>
+
+
+    <div class="achievement">
+
+        <strong>
+            IIT Delhi:
+        </strong>
+
+        Currently pursuing MTech in Industrial Engineering
+        and Operations Research at IIT Delhi.
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <h2 class="section-title">
+        Contact <span>Me</span>
+    </h2>
+
+
+    <div class="contact">
+
+        <p>
+            I'm always open to connecting, collaborating
+            and discussing interesting projects.
+        </p>
+
+
+        <p>
+            📧
+
+            <a href="mailto:krvaibhav78@gmail.com">
+
+                krvaibhav78@gmail.com
+
+            </a>
+
+        </p>
+
+
+        <div class="social-links">
+
+            <a
+                href="https://github.com/krvaibhav78"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+
+            <a
+                href="https://linkedin.com/in/kumar-vaibhav-119437291"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 Kumar Vaibhav.
+    All Rights Reserved.
+
+</footer>
+
+
+</body>
+
+</html>
+```
+
